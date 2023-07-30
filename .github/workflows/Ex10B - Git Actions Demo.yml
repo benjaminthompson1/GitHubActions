@@ -1,0 +1,39 @@
+# This is the name of the workflow
+name: A Basic Workflow
+
+# This workflow gets triggered on a push or a pull request to the main branch, and also manually through the GitHub Actions UI
+on:
+  # Trigger the workflow on push to the main branch
+  push:
+    branches: [ "main" ]
+  
+  # Trigger the workflow on pull requests to the main branch
+  pull_request:
+    branches: [ "main" ]  
+
+  # Allow manual triggering of the workflow from the GitHub Actions UI
+  workflow_dispatch:
+    
+    
+jobs:
+  # This job is called build
+  build:
+    # This job runs on the latest version of Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # This step checks out a copy of your repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # This step runs a one-line script that prints "Hello, world!" to the console
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # This step runs a multi-line script that prints two lines to the console
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+
