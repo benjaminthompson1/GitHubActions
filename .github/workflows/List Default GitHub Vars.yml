@@ -7,18 +7,16 @@ on:
   workflow_dispatch:  
     
 jobs:
-  # This job is called build
-  build:
+  # This job is called env-varables
+  env-varables:
     # This job runs on the latest version of Ubuntu
     runs-on: ubuntu-latest
 
     steps:
-      # This step lists the env varables
-      - name : lists-env-vars
+      - name : Lists ENV Varables
         run: env
 
-      # This step prints the env varables
-      - name: print-values-of-env-vars
+      - name: Print Values of ENV Varables
         run: |
           echo "$CONDA"
           echo "$GITHUB_WORKSPACE"
