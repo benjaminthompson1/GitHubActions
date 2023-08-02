@@ -5,24 +5,32 @@ name: GitHub Artifacts
 on: push
     
 jobs:
-  # This job is called secrets
   artifact_create:
-    # This job runs on the latest version of Ubuntu
     runs-on: ubuntu-latest
     steps:
-      - name : Create a local file
-        run: echo "Hi, I am storing this data in this file, so that I can use this in the subsequent step within this workflow"
-      - uses: actions/upload-artifact@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create a local file
+        run: echo "Hi, I am storing this data in this file, so that I can use this in the subsequent step within this workflow" > file.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
           name: file
           path: file.txt
 
   artifact_download:
-    # This job runs on the latest version of Ubuntu
     runs-on: ubuntu-latest
     needs: artifact_create
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
         with:
           name: file
-      - run: cat file.txt
+
+      - name: Display file content
+        run: cat file.txt
