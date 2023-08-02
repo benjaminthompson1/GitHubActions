@@ -19,5 +19,5 @@ jobs:
     steps:  
       - name: Print Secret from environment z25c
         run: |
-        echo "z25c_userid: ${{ secrets.Z25C_USERID }}"
-        echo "z25c_password: ${{ secrets.Z25C_PASSWORD }}"
+          echo "z25c_userid: ${{ secrets.Z25C_USERID }}"
+          echo "z25c_password: ${{ secrets.Z25C_PASSWORD }}"
