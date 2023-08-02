@@ -1,5 +1,5 @@
 # This is the name of the workflow
-name: List the default GitHub variables
+name: GitHub variables
 
 # This workflow gets triggered manually through the GitHub Actions UI
 on:
@@ -21,5 +21,3 @@ jobs:
           echo "$CONDA"
           echo "$GITHUB_WORKSPACE"
           echo "$JAVA_HOME_11_X64"
-
-
