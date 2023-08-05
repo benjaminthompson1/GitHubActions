@@ -5,16 +5,11 @@ name: First Github Action
 on:
   # Trigger the workflow on push to the main branch
   push:
-    branches: [ "main" ]
-  
-  # Trigger the workflow on pull requests to the main branch
-  pull_request:
-    branches: [ "main" ]  
+    branches: [ "main" ] 
 
   # Allow manual triggering of the workflow from the GitHub Actions UI
   workflow_dispatch:
-    
-    
+     
 jobs:
   # This job is called build
   build:
