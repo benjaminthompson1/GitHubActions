@@ -9,7 +9,7 @@ on:
     
 jobs:
   # This job is called build
-  build:
+  First-GitHub-Action-z25c:
     # This job runs on the latest version of Ubuntu
     runs-on: z25c
 
@@ -27,3 +27,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # This step sleeps for 100 seconds
+      - name: sleep for 100 seconds
+        run: sleep 100

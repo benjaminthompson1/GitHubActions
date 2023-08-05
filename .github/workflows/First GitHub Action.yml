@@ -12,7 +12,7 @@ on:
      
 jobs:
   # This job is called build
-  build:
+  First-GitHub-Action:
     # This job runs on the latest version of Ubuntu
     runs-on: ubuntu-latest
 
