@@ -7,6 +7,6 @@
   tasks:
     - name: Transfer file to mainframe PDS dataset
       zos_copy:
-        src: ./path/to/your/file.txt  # Relative path from root of the repo
-        dest: 'IBMUSER.GITHUB.DATASET(MEMBER)'
+        src: .github/ansible/mainframe-transfer.yml
+        dest: 'IBMUSER.DBB.COBOL(MEMBER)'
         is_binary: yes
