@@ -14,5 +14,11 @@ jobs:
       - name: List current directory contents
         run: ls -al
 
+      - name: List current directory contents
+        run: cd ansible
+
+      - name: List current directory contents
+        run: ls -al
+
       - name: Transfer file using Ansible
         run: ansible-playbook -i .github/ansible/inventry/inventory.yml .github/ansible/mainframe-transfer.yml -vvv
