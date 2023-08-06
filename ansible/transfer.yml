@@ -1,0 +1,12 @@
+---
+- hosts: ben_s0w1 
+  collections:
+    - ibm.ibm_zos_core
+  gather_facts: no
+
+  tasks:
+    - name: Transfer file to mainframe PDS dataset
+      zos_copy:
+        src: ./path/to/your/file.txt  # Relative path from root of the repo
+        dest: 'IBMUSER.GITHUB.DATASET(MEMBER)'
+        is_binary: yes
