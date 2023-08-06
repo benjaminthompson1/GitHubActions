@@ -8,5 +8,5 @@
     - name: Transfer file to mainframe PDS dataset
       zos_copy:
         src: MEMBER.cbl
-        dest: 'IBMUSER.DBB.COBOL(MEMBER)'
+        dest: /u/ibmuser/MEMBER.cbl
         remote_src: true
