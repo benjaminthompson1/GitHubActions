@@ -17,4 +17,4 @@ jobs:
           ZOSMF_OPTION_USER: ${{ secrets.ZOSMF_OPTION_USER }}
           ZOSMF_OPTION_PASSWORD: ${{ secrets.ZOSMF_OPTION_PASSWORD }}
           ZOSMF_OPTION_REJECT_UNAUTHORIZED: ${{ secrets.ZOSMF_OPTION_REJECT_UNAUTHORIZED }}
-      - run: zowe zos-files list ds DATASETNAME -a --responseTimeout 60
+      - run: zowe zos-files list ds IBMUSER -a --responseTimeout 60
