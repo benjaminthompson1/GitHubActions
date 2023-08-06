@@ -4,9 +4,13 @@
     - ibm.ibm_zos_core
   gather_facts: no
 
+  environment: "{{ environment_vars }}"
+
   tasks:
-    - name: Transfer file to mainframe PDS dataset
-      zos_copy:
-        src: MEMBER.cbl
-        dest: /u/ibmuser/MEMBER.cbl
-        remote_src: true
+    - name: Ping using zos_ping
+      zos_ping:
+      register: zos_ping_result
+
+    - name: Response from zos_ping
+      debug:
+        msg: "{{ zos_ping_result }}"
