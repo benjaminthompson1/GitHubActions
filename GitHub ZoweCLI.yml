@@ -1,0 +1,20 @@
+name: GitHub Zowe CLI
+
+on:
+  workflow_dispatch:  
+    
+jobs:
+  test:
+    runs-on: z25c
+    steps:
+      - uses: actions/checkout@v2
+      - name: Zowe CLI
+        uses: richardnas/zowe-action@v1
+        with:
+          ZOSMF_OPTION_NAME: ${{ secrets.ZOSMF_OPTION_NAME }}
+          ZOSMF_OPTION_HOST: ${{ secrets.ZOSMF_OPTION_HOST }}
+          ZOSMF_OPTION_PORT: ${{ secrets.ZOSMF_OPTION_PORT }}
+          ZOSMF_OPTION_USER: ${{ secrets.ZOSMF_OPTION_USER }}
+          ZOSMF_OPTION_PASSWORD: ${{ secrets.ZOSMF_OPTION_PASSWORD }}
+          ZOSMF_OPTION_REJECT_UNAUTHORIZED: ${{ secrets.ZOSMF_OPTION_REJECT_UNAUTHORIZED }}
+      - run: zowe zos-files list ds DATASETNAME -a --responseTimeout 60
