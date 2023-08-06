@@ -11,5 +11,8 @@ jobs:
       - name : Checkout repository
         uses: actions/checkout@v2
 
+      - name: List current directory contents
+        run: ls -al
+
       - name: Transfer file using Ansible
-        run: ansible-playbook -i .github/ansible/inventry/inventory.yml .github/ansible/mainframe-transfer.yml
+        run: ansible-playbook -i .github/ansible/inventry/inventory.yml .github/ansible/mainframe-transfer.yml -vvv
