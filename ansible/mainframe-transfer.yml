@@ -9,4 +9,4 @@
       zos_copy:
         src: MEMBER.cbl
         dest: 'IBMUSER.DBB.COBOL(MEMBER)'
-        is_binary: no
+        remote_src: true
